@@ -1,4 +1,13 @@
-@-moz-document regexp("^((https?:\\/\\/)?(login|signup|account)\\.)?(microsoft|microsoftonline|live)+\\.com?(.*)$") {
+/* ==UserStyle==
+@name           Microsoft Login - Dark Mode
+@namespace      https://thealiendrew.github.io/
+@version        1.9.9
+@description    Makes all Microsoft login pages in darkmode.
+@author         AlienDrew
+@license        GPL-3.0-or-later
+@updateURL      https://raw.githubusercontent.com/TheAlienDrew/User-Styles/main/Microsoft/Microsoft-Login-Dark-Mode.user.css
+==/UserStyle== */
+
 /* Copyright (C) 2020  Andrew Larson (thealiendrew@gmail.com)
 
  * This program is free software: you can redistribute it and/or modify
@@ -15,6 +24,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+@-moz-document regexp("^((https?:\\/\\/)?(login|signup|account)\\.)?(microsoft|microsoftonline|live)+\\.com?(.*)$") {
 /* inverts */
 :root {
   --special-background-material-dark:#202020; /* for compliance in material design - main background */
