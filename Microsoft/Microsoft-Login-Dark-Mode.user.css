@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Microsoft Login - Dark Mode
 @namespace      https://thealiendrew.github.io/
-@version        1.9.9
+@version        2.0.0
 @description    Makes all Microsoft login pages in darkmode.
 @author         AlienDrew
 @license        GPL-3.0-or-later
@@ -308,11 +308,19 @@ body.cb {
 }
 
 .text-input, input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select {
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
 	border-color:var(--normally-gray40);
 	border-color:var(--normally-black-alpha0-600)
 }
 
 .text-input-hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover, select:hover {
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
 	border-color:var(--normally-darker-gray20);
 	border-color:var(--normally-black-alpha0-800)
 }
@@ -510,7 +518,7 @@ input[type="range"]:disabled::-ms-fill-lower, input[type="range"]:disabled::-ms-
 	background-color:var(--normally-black-alpha0-200)!important
 }
 
-select:focus option, select:active, select[multiple]:focus, .modal-content, .row.tile:focus .progress > div, .row.tile:focus:hover .progress > div, .row.tile:active .progress > div, .inner, .sign-in-box, .promoted-fed-cred-content, .new-session-popup-v2sso, .backButton {
+select:focus option, select, select:active, select[multiple]:focus, .modal-content, .row.tile:focus .progress > div, .row.tile:focus:hover .progress > div, .row.tile:active .progress > div, .inner, .sign-in-box, .promoted-fed-cred-content, .new-session-popup-v2sso, .backButton {
 	background-color:var(--special-background-material-dark)
 }
 
