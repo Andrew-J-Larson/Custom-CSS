@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Microsoft Login - Dark Mode
 @namespace      https://thealiendrew.github.io/
-@version        2.0.0
+@version        2.0.1
 @description    Makes all Microsoft login pages in darkmode.
 @author         AlienDrew
 @license        GPL-3.0-or-later
@@ -290,7 +290,7 @@ body.cb {
 	color:var(--normally-darker-gray12)
 }
 
-.background,.background-image-holder {
+.background, .background-image-holder {
 	background:var(--normally-gray95)
 }
 
@@ -776,7 +776,7 @@ fieldset {
 }
 
 /* image/input edits */
-img.tile-img, .help-button img, .backButton img, #moreOptions > img.desktopMode.desktopMode, #fidoDialogTitle img, #gitHubDialogTitle img, #errorBannerCloseLink img, #debugDetailsCopyMessage img, input[type="checkbox"], div[aria-label="Open menu"] > img {
+img.tile-img, .help-button img, .backButton img, #moreOptions > img.desktopMode.desktopMode, #fidoDialogTitle img, #gitHubDialogTitle img, #errorBannerCloseLink img, #debugDetailsCopyMessage img, input[type="checkbox"], div[aria-label="Open menu"] > img, .app .background-logo-holder, .app.background-image-holder {
     filter: invert(100%) hue-rotate(180deg)
 }
 div[style="background: rgb(242, 242, 242);"].background-image-holder {
