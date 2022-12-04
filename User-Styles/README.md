@@ -1,5 +1,5 @@
-# Custom-CSS
-Useful CSS styles for certain websites.
+# User-Styles
+Useful injected styles for certain websites (best used with an extention such as Stylus).
 
 For any folder, it starts off with the website a style can be used with, and inside of each folder will be either user styles or more folders that pertain to specific areas on the website.
 
