@@ -1,4 +1,4 @@
-# Custom-CSS
+# Custom CSS
 Useful CSS files for certain websites.
 
 Each folder represents a website, and in them contain a CSS file (or multiple CSS files) that can be used on the website(s).
