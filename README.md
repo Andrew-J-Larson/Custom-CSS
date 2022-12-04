@@ -11,4 +11,4 @@ User styles are only ever stored in the `!-User-Styles` folder.
 
 ## Note: About Depricated
 
-If you can't seem to find a script that used to be here, it likely doesn't work anymore and was put in the `Ω - DEPRECATED` folder.
+If you can't seem to find a style that used to be here, it likely doesn't work anymore and was put in the `Ω - DEPRECATED` folder.
