@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           Crows Crows Crows (Disable Email Sign-Up)
+@name           BitDay (Legacy) - Minimal GUI
 @namespace      https://thealiendrew.github.io/
-@version        1.0.2
-@description    Hides all the email signups on the website.
+@version        1.0.0
+@description    Removes all GUI, except the clock area, originally made for a small screen Raspberry PI clock kiosk.
 @author         AlienDrew
 @license        GPL-3.0-or-later
-@updateURL      https://raw.githubusercontent.com/TheAlienDrew/Custom-CSS/main/!-User-Styles/Crows%20Crows%20Crows/CCC-Disable-SignUp.user.css
+@updateURL      https://raw.githubusercontent.com/TheAlienDrew/Custom-CSS/main/!-User-Styles/BitDay/Legacy-Minimal-GUI.user.css
 ==/UserStyle== */
 
 /* Copyright (C) 2020  Andrew Larson (thealiendrew@gmail.com)
@@ -24,8 +24,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@-moz-document domain("crowscrowscrows.com") {
-.signup-wrapper {
-	display: none;
+@-moz-document url-prefix("https://www.bitday.me/legacy") {
+.donate, footer {
+    display: none !important;
 }
 }
