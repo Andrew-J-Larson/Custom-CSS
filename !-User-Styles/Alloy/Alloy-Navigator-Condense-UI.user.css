@@ -8,6 +8,7 @@
 @updateURL      https://raw.githubusercontent.com/TheAlienDrew/Custom-CSS/main/!-User-Styles/Alloy/Alloy-Navigator-Condense-UI.user.css
 ==/UserStyle== */
 
+
 /* Copyright (C) 2020  Andrew Larson (thealiendrew@gmail.com)
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,88 +24,86 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
- @-moz-document regexp("^https?:\\/\\/[^.]+\\.[^.]+\\.[^.]+\\/wp\\/.*\\.aspx.*") {
+@-moz-document regexp("^https?:\\/\\/[^.]+\\.[^.]+\\.[^.]+\\/wp\\/.*\\.aspx.*") {
     /* condense preview tables */
     .preview-wrapper {
         padding: 2px;
         min-height: 0;
     }
-    .preview-wrapper > span {
+    .preview-wrapper>span {
         padding-left: initial;
     }
-    
     /* Condense rows on any list view */
     .grid-col-person-image {
         width: 20px;
         height: 20px;
     }
-    table:not([data-object="uActivities"]) > tbody > tr > td > div[class$="HSDC"] table[class*="Table_"] > tbody > tr:not([class$="Arm"]) > td:not(.Flag_Status),
-    table[data-object="uActivities"] > tbody > tr > td > div[class$="HSDC"] table[class*="Table_"] > tbody > tr:not([class$="Arm"]) > td:not(:first-child) {
+    table:not([data-object="uActivities"])>tbody>tr>td>div[class$="HSDC"] table[class*="Table_"]>tbody>tr:not([class$="Arm"])>td:not(.Flag_Status),
+    table[data-object="uActivities"]>tbody>tr>td>div[class$="HSDC"] table[class*="Table_"]>tbody>tr:not([class$="Arm"])>td:not(:first-child) {
         padding: 0 8px 4px;
     }
-    table:not([data-object="uActivities"]) > tbody > tr > td > div[class$="CSD"] table[class*="Table_"] > tbody > tr:not([class$="Arm"]) > td,
-    table[data-object="uActivities"] > tbody > tr > td > div[class$="CSD"] table[class*="Table_"] > tbody > tr:not([class$="Arm"]) > td:not(:first-child) {
+    table:not([data-object="uActivities"])>tbody>tr>td>div[class$="CSD"] table[class*="Table_"]>tbody>tr:not([class$="Arm"])>td,
+    table[data-object="uActivities"]>tbody>tr>td>div[class$="CSD"] table[class*="Table_"]>tbody>tr:not([class$="Arm"])>td:not(:first-child) {
         padding: 2px 10px 2px;
     }
-    div[class$="FSDC"] table[class*="Table_"] > tbody > tr:not([class$="Arm"]) > td {
+    div[class$="FSDC"] table[class*="Table_"]>tbody>tr:not([class$="Arm"])>td {
         padding: 2px 10px 2px;
     }
-    table[data-object="uActivities"] > tbody > tr > td > div[class$="HSDC"] table[class*="Table_"] > tbody > tr > td:first-child,
-    table[data-object="uActivities"] > tbody > tr > td > div[class$="CSD"] table[class*="Table_"] > tbody > tr > td:first-child,
-    table:not([data-object="uActivities"]) > tbody > tr > td > div[class$="HSDC"] table[class*="Table_"] > tbody > tr:not([class$="Arm"]) > td.Flag_Status {
+    table[data-object="uActivities"]>tbody>tr>td>div[class$="HSDC"] table[class*="Table_"]>tbody>tr>td:first-child,
+    table[data-object="uActivities"]>tbody>tr>td>div[class$="CSD"] table[class*="Table_"]>tbody>tr>td:first-child,
+    table:not([data-object="uActivities"])>tbody>tr>td>div[class$="HSDC"] table[class*="Table_"]>tbody>tr:not([class$="Arm"])>td.Flag_Status {
         padding-top: 0;
         padding-bottom: 0;
     }
-    
     /* Condense actions on side bar */
-    .full-form-tasks [class*="-headerCollapsed"], .full-form-tasks [class*="-header"] {
+    .full-form-tasks [class*="-headerCollapsed"],
+    .full-form-tasks [class*="-header"] {
         padding: 4px 5px 3px 10px !important;
     }
-    .full-form-tasks [class*="Lite_"] [class*="-item"][class*="-link"] > a {
+    .full-form-tasks [class*="Lite_"] [class*="-item"][class*="-link"]>a {
         padding: 2px 22px 2px 32px;
     }
-    
     /* Make long text fields in list views not wrap, and scroll instead */
-    div[class$="CSD"] table[class*="Table_"] > tbody > tr > td:not(.Flag_Status) {
+    div[class$="CSD"] table[class*="Table_"]>tbody>tr>td:not(.Flag_Status) {
         overflow-x: auto;
     }
-    div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td span[class*="Base_"] {
+    div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td span[class*="Base_"] {
         font-size: 12px;
         white-space: nowrap;
     }
     /* scrollbar */
-    div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar {
+    div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar {
         width: 4px;
         height: 4px;
         border-radius: 10px;
     }
-    div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-track {
-        background: rgb(241,241,241);
+    div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-track {
+        background: rgb(241, 241, 241);
         border-radius: 10px;
     }
-    div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-thumb {
-        background: rgb(193,193,193);
+    div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-thumb {
+        background: rgb(193, 193, 193);
         border-radius: 10px;
     }
-    div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-thumb:hover {
-        background: rgb(168,168,168);
+    div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-thumb:hover {
+        background: rgb(168, 168, 168);
         border-radius: 10px;
     }
-    div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-thumb:active {
-        background: rgb(120,120,120);
+    div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-thumb:active {
+        background: rgb(120, 120, 120);
         border-radius: 10px;
     }
     /* darkreader dark scrollbar */
-    html[data-darkreader-scheme="dark"] div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-track {
-        background: rgb(32,35,36);
+    html[data-darkreader-scheme="dark"] div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-track {
+        background: rgb(32, 35, 36);
     }
-    html[data-darkreader-scheme="dark"] div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-thumb {
-        background: rgb(69,74,77);
+    html[data-darkreader-scheme="dark"] div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-thumb {
+        background: rgb(69, 74, 77);
     }
-    html[data-darkreader-scheme="dark"] div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-thumb:hover {
-        background: rgb(87,94,98);
+    html[data-darkreader-scheme="dark"] div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-thumb:hover {
+        background: rgb(87, 94, 98);
     }
-    html[data-darkreader-scheme="dark"] div[class$="CSD"] > table[class*="Table_"] > tbody > tr > td::-webkit-scrollbar-thumb:active {
-        background: rgb(72,78,81);
+    html[data-darkreader-scheme="dark"] div[class$="CSD"]>table[class*="Table_"]>tbody>tr>td::-webkit-scrollbar-thumb:active {
+        background: rgb(72, 78, 81);
     }
-    }
+}
