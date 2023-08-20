@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           iCollege - Scrollable Video Selection
+@name           iducate (iCollege) - Scrollable Video Selection
 @namespace      https://andrew-j-larson.github.io/
-@version        1.0.4
+@version        1.0.5
 @description    Allows you to scroll the video selection pane without having to scroll away from the video you are watching.
 @author         Andrew Larson
 @license        GPL-3.0-or-later
-@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/iCollege/Scrollable-Video-Selection.user.css
+@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/%CE%A9%20-%20DEPRECATED/!-User-Styles/iducate-iCollege/Scrollable-Video-Selection.user.css
 ==/UserStyle== */
 
 /* Copyright (C) 2023  Andrew Larson (andrew.j.larson18+github@gmail.com)
@@ -23,7 +23,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@-moz-document url-prefix("https://www.icollege.co/course-launch/") {
+@-moz-document url-prefix("https?://(www\\.)?(|icollege\\.co|iducate\\.io)/course-launch/.*") {
 .view-id-curriculum_videos {
     overflow-y: scroll;
     width: 239px;
