@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Alloy Navigator - Condense UI
 @namespace      https://andrew-j-larson.github.io/
-@version        2.0.0
+@version        2.0.1
 @description    Condenses Alloy Navigator's UI as much as possible while still being readable.
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -61,7 +61,7 @@
         justify-content: normal;
         align-items: center;
     }
-    .ngx-PersonCell__Picture, td:not(.MuiTableCell-Priority) .ngx-ImageCell > img {
+    .ngx-PersonCell__Picture, .NativeTableCell__Content > div > img {
         width: 20px !important;
         height: 20px !important;
     }
