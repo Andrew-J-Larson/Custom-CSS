@@ -1,13 +1,12 @@
 /* ==UserStyle==
 @name           Alloy Navigator - Condense UI
 @namespace      https://andrew-j-larson.github.io/
-@version        1.0.2
+@version        2.0.0
 @description    Condenses Alloy Navigator's UI as much as possible while still being readable.
 @author         Andrew Larson
 @license        GPL-3.0-or-later
 @updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/Alloy/Alloy-Navigator-Condense-UI.user.css
 ==/UserStyle== */
-
 
 /* Copyright (C) 2023  Andrew Larson (andrew.j.larson18+github@gmail.com)
  * This program is free software: you can redistribute it and/or modify
@@ -25,6 +24,85 @@
  */
 
 @-moz-document regexp("^https?:\\/\\/[^.]+\\.[^.]+\\.[^.]+\\/wp\\/.*\\.aspx.*") {
+    /* ALL EXPERIENCES */
+
+    /* condense actions on side bar */
+    .full-form-tasks [class*="-headerCollapsed"],
+    .full-form-tasks [class*="-header"] {
+        padding: 4px 5px 3px 10px !important;
+    }
+    .full-form-tasks [class*="Lite_"] [class*="-item"][class*="-link"]>a {
+        padding: 2px 22px 2px 32px;
+    }
+
+    /* NEW EXPERIENCE */
+
+    /* condense tables */
+    .NativeTableRow {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    .MuiTableCell-head, .NativeTableCell {
+        padding: 3px 8px !important;
+        height: 24px !important;
+    }
+    .NativeTableCell {
+        max-width: 180px !important;
+    }
+    .NativeTableCell__Content {
+        min-width: auto !important;
+    }
+    .NativeTableCell:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) .NativeTableCell__Content {
+        overflow-x: auto;
+    }
+    .NativeTableCell > * {
+        height: 24px;
+        display: flex;
+        justify-content: normal;
+        align-items: center;
+    }
+    .ngx-PersonCell__Picture, td:not(.MuiTableCell-Priority) .ngx-ImageCell > img {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    /* scrollbar */
+    .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        border-radius: 10px;
+    }
+    .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar-track {
+        background: rgb(241, 241, 241);
+        border-radius: 10px;
+    }
+    .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar-thumb {
+        background: rgb(193, 193, 193);
+        border-radius: 10px;
+    }
+    .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar:hover {
+        background: rgb(168, 168, 168);
+        border-radius: 10px;
+    }
+    .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar:active {
+        background: rgb(120, 120, 120);
+        border-radius: 10px;
+    }
+    /* darkreader dark scrollbar */
+    html[data-darkreader-scheme="dark"] .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar-track {
+        background: rgb(32, 35, 36);
+    }
+    html[data-darkreader-scheme="dark"] .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar-thumb {
+        background: rgb(69, 74, 77);
+    }
+    html[data-darkreader-scheme="dark"] .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar:hover {
+        background: rgb(87, 94, 98);
+    }
+    html[data-darkreader-scheme="dark"] .NativeTableCell .NativeTableCell__Content::-webkit-scrollbar:active {
+        background: rgb(72, 78, 81);
+    }
+
+    /* OLD */
+
     /* condense preview tables */
     .preview-wrapper {
         padding: 2px;
@@ -54,14 +132,6 @@
     table:not([data-object="uActivities"])>tbody>tr>td>div[class$="HSDC"] table[class*="Table_"]>tbody>tr:not([class$="Arm"])>td.Flag_Status {
         padding-top: 0;
         padding-bottom: 0;
-    }
-    /* Condense actions on side bar */
-    .full-form-tasks [class*="-headerCollapsed"],
-    .full-form-tasks [class*="-header"] {
-        padding: 4px 5px 3px 10px !important;
-    }
-    .full-form-tasks [class*="Lite_"] [class*="-item"][class*="-link"]>a {
-        padding: 2px 22px 2px 32px;
     }
     /* Make long text fields in list views not wrap, and scroll instead */
     div[class$="CSD"] table[class*="Table_"]>tbody>tr>td:not(.Flag_Status) {
