@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Alloy Navigator - Condense UI
 @namespace      https://andrew-j-larson.github.io/
-@version        2.0.1
+@version        2.0.2
 @description    Condenses Alloy Navigator's UI as much as possible while still being readable.
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -41,6 +41,9 @@
     .NativeTableRow {
         font-size: 12px;
         white-space: nowrap;
+    }
+    .MuiTableCell-head > div {
+        height: 30px;
     }
     .MuiTableCell-head, .NativeTableCell {
         padding: 3px 8px !important;
