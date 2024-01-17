@@ -1,17 +1,17 @@
 /* ==UserStyle==
 @name           Alloy Navigator - Condense UI
 @namespace      https://andrew-j-larson.github.io/
-@version        2.0.3
+@version        2.0.4
 @description    Condenses Alloy Navigator's UI as much as possible while still being readable.
 @author         Andrew Larson
 @license        GPL-3.0-or-later
-@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/Alloy/Alloy-Navigator-Condense-UI.user.css
+@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/%CE%A9%20-%20DEPRECATED/!-User-Styles/Alloy/Alloy-Navigator-Condense-UI.user.css
 ==/UserStyle== */
 
 /*
  * ATTENTION!
  * 
- * It looks like as of version 2023.2, Alloy comes with the option to enable their own compact UI feature, which means this will now become defunct. After the update goes out, I'll be deprecating the script.
+ * This userstyle is now deprecated due to Alloy including their own "compact" ui feature in their latest update. This script will soon move into https://github.com/Andrew-J-Larson/Custom-CSS/tree/main/%CE%A9%20-%20DEPRECATED/!-User-Styles
  * 
  */
 
