@@ -1,0 +1,35 @@
+/* ==UserStyle==
+@name           Discord - Work Mode
+@namespace      https://andrew-larson.dev/
+@version        1.0.0
+@description    Blurs all images, stickers, and videos, unless hovered over.
+@author         Andrew Larson
+@license        GPL-3.0-or-later
+@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/Discord/Discord-Work-Mode.user.css
+==/UserStyle== */
+
+/* Copyright (C) 2024  Andrew Larson (github@andrew-larson.dev)
+
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@-moz-document domain("discord.com") {
+  div:is([class^="bannerImage_"], [class^="inviteSplash_"]):not(:hover) > img, div[class^="wrapperPaused_"]:not(:hover) > video, div[class^="spoilerContent_"] > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[class^="embedGallery"] > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > span[class^="clickableSticker_"]:not(:hover) > div > div > img, div[id^="message-accessories-"] > div[class^="inlineMediaEmbed_"] > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > article > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > article > div > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > div[class^="visualMediaItemContainer_"] > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > div[class^="visualMediaItemContainer_"] > div > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > div[class^="visualMediaItemContainer_"] > div > div > div > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) {
+    -webkit-filter: blur(25px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+    filter: blur(25px);
+  }
+}
