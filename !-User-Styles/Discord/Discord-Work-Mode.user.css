@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode
 @namespace      https://andrew-larson.dev/
-@version        1.0.0
+@version        1.0.1
 @description    Blurs all images, stickers, and videos, unless hovered over.
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -24,8 +24,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@-moz-document domain("discord.com") {
-  div:is([class^="bannerImage_"], [class^="inviteSplash_"]):not(:hover) > img, div[class^="wrapperPaused_"]:not(:hover) > video, div[class^="spoilerContent_"] > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[class^="embedGallery"] > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > span[class^="clickableSticker_"]:not(:hover) > div > div > img, div[id^="message-accessories-"] > div[class^="inlineMediaEmbed_"] > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > article > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > article > div > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > div[class^="visualMediaItemContainer_"] > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > div[class^="visualMediaItemContainer_"] > div > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover), div[id^="message-accessories-"] > div[class^="visualMediaItemContainer_"] > div > div > div > div > div > div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) {
+ @-moz-document domain("discord.com") {
+  div:is([class^="bannerImage_"], [class^="inviteSplash_"]):not(:hover) > img,
+  div[class^="wrapperPaused_"]:not(:hover) > video,
+  div[id^="message-accessories-"] > span[class^="clickableSticker_"]:not(:hover) > div > div > img,
+  div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) {
     -webkit-filter: blur(25px);
     -moz-filter: blur(25px);
     -o-filter: blur(25px);
