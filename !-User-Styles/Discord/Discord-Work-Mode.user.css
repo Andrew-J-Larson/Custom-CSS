@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode
 @namespace      https://andrew-larson.dev/
-@version        1.0.5
+@version        1.0.6
 @description    Unless hovered over, all media elements are blurred (avatar/profile images, server icon/banner/spash images, embedded stickers/videos/images, and jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -24,9 +24,12 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@-moz-document domain("discord.com") {
+ @-moz-document domain("discord.com") {
   /* Smaller media */
-  img:is([class^="avatar_"], [aria-label^=":"].jumboable):not(:hover),
+  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]):not(:hover) > div[class^="wrapper_"] > svg img,
+  div[class^="avatar_"]:not(:hover) > div > svg img,
+  div[class^="message_"] > div[class^="contents_"] > img[class^="avatar_"]:not(:hover),
+  img[aria-label^=":"].jumboable:not(:hover),
   div[class^="closedFolderIconWrapper_"]:not(:hover) > div[class^="icon_"],
   div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div[class^="wrapper_"]:not(:hover) > svg > foreignObject > div > img {
     -webkit-filter: blur(5px);
