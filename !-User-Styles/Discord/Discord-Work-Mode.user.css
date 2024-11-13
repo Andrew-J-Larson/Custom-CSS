@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode
 @namespace      https://andrew-larson.dev/
-@version        1.0.9
+@version        1.1.0
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/spash images, embedded stickers/videos/images, and jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -35,8 +35,8 @@
     filter: blur(10px);
   }
   /* Smaller media */
-  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]):not(:hover) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
-  div[class^="avatar_"]:not(:hover) > div > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="peopleListItem_"]:not(:hover)  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="interactive_"]:not(:hover) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"]:not(:hover) > *:not(main) div[class^="contents_"] > img[class^="avatar_"],
   main div[class^="message_"]:not(:hover) > div[class^="contents_"] > img[class^="avatar_"],
   img[aria-label^=":"].jumboable:not(:hover),
