@@ -2,7 +2,7 @@
 @name           Discord - Work Mode
 @namespace      https://andrew-larson.dev/
 @version        1.0.9
-@description    Unless hovered over, all media elements are blurred (avatar/profile images, server icon/banner/spash images, embedded stickers/videos/images, and jumbo sized emojis).
+@description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/spash images, embedded stickers/videos/images, and jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
 @updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/Discord/Discord-Work-Mode.user.css
