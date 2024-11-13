@@ -1,0 +1,53 @@
+/* ==UserStyle==
+@name           Discord - Work Mode
+@namespace      https://andrew-larson.dev/
+@version        1.0.7
+@description    Unless hovered over, all media elements are blurred (avatar/profile images, server icon/banner/spash images, embedded stickers/videos/images, and jumbo sized emojis).
+@author         Andrew Larson
+@license        GPL-3.0-or-later
+@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/Discord/Discord-Work-Mode.user.css
+==/UserStyle== */
+
+/* Copyright (C) 2024  Andrew Larson (github@andrew-larson.dev)
+
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@-moz-document domain("discord.com") {
+  /* Smaller media */
+  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]):not(:hover) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="avatar_"]:not(:hover) > div > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="message_"] > div[class^="contents_"] > img[class^="avatar_"]:not(:hover),
+  img[aria-label^=":"].jumboable:not(:hover),
+  div[class^="closedFolderIconWrapper_"]:not(:hover) > div[class^="icon_"],
+  div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div[class^="wrapper_"]:not(:hover) > svg > foreignObject > div > img {
+    -webkit-filter: blur(2.5px);
+    -moz-filter: blur(2.5px);
+    -o-filter: blur(2.5px);
+    -ms-filter: blur(2.5px);
+    filter: blur(2.5px);
+  }
+  /* Larger media */
+  div[class^="wrapperPaused_"]:not(:hover) > video,
+  div[class^="inviteSplash_"]:not(:hover) > img,
+  div[id^="message-accessories-"] > span[class^="clickableSticker_"]:not(:hover) > div > div > img,
+  nav:not(:hover) > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
+  div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) *:is(img, video) {
+    -webkit-filter: blur(25px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+    filter: blur(25px);
+  }
+}
