@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.1.2
+@version        1.1.3
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -41,7 +41,7 @@
   main div[class^="message_"]:not(:hover) > div[class^="contents_"] > img[class^="avatar_"],
   img[aria-label^=":"].jumboable:not(:hover),
   div[class^="closedFolderIconWrapper_"]:not(:hover) > div[class^="icon_"],
-  div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div[class^="wrapper_"]:not(:hover) > svg > foreignObject > div > img {
+  div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div:not(:hover) > svg > foreignObject > div > img {
     -webkit-filter: blur(2.5px);
     -moz-filter: blur(2.5px);
     -o-filter: blur(2.5px);
