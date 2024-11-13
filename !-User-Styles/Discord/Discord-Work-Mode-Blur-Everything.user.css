@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.1.3
+@version        1.2.0
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -25,7 +25,7 @@
  */
 
 @-moz-document domain("discord.com") {
-  /* Text */
+  /* Text info */
   li[class^="channel_"]:not(:hover) div[class^="layout_"] > div[class^="content"],
   div[class^="peopleListItem_"]:not(:hover) div[class^="userInfo_"] > div[class^="text_"] {
     -webkit-filter: blur(10px);
@@ -34,28 +34,49 @@
     -ms-filter: blur(10px);
     filter: blur(10px);
   }
-  /* Smaller media */
+  /* Small media */
   div[class^="peopleListItem_"]:not(:hover)  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div[class^="interactive_"]:not(:hover) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
-  div[class^="content_"]:not(:hover) > *:not(main) div[class^="contents_"] > img[class^="avatar_"],
-  main div[class^="message_"]:not(:hover) > div[class^="contents_"] > img[class^="avatar_"],
-  img[aria-label^=":"].jumboable:not(:hover),
+  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
+  div[class^="message_"] > div[class^="contents_"] > img[class^="avatar_"]:not(:hover),
   div[class^="closedFolderIconWrapper_"]:not(:hover) > div[class^="icon_"],
-  div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div:not(:hover) > svg > foreignObject > div > img {
+  div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div:not(:hover) > svg > foreignObject > div > img,
+  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
+  div[class^="message_"] > div > *:not(div[class^="disableInteraction_"]) img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
+  div[id^="popout_"] img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
+  li[id^="emoji-picker-grid-"]:not(:hover) img:is([aria-label^=":"], [alt^=":"]),
+  div:not(:hover) > svg img[class^="guildIcon_"] {
     -webkit-filter: blur(2.5px);
     -moz-filter: blur(2.5px);
     -o-filter: blur(2.5px);
     -ms-filter: blur(2.5px);
     filter: blur(2.5px);
   }
-  /* Larger media */
+  /* Medium media */
+  div[class^="emojiSection_"] div:not([role="img"]) > div[class^="assetWrapper_"],
+  span[class^="clickableSticker_"]:not(:hover) > div:not([role="img"]) > div[class^="assetWrapper_"],
+  div[class^="stickerNode_"]:not(:hover) > div[class^="assetWrapper_"] {
+    overflow: hidden !important;
+  }
+  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="assetWrapper_"]:not(:hover) > img[data-type="sticker"],
+  div[class^="message_"] > div > *:not(div[class^="disableInteraction_"]) > *:not(div[id^="message-accessories-"]) div[class^="assetWrapper_"]:not(:hover) > img[data-type="sticker"],
+  div[id^="popout_"] div[class^="assetWrapper_"]:not(:hover) > img[data-type="sticker"],
+  div[id^="sticker-picker-grid-"]:not(:hover) div[class^="assetWrapper_"]:not(:hover) > img[data-type="sticker"] {
+    -webkit-filter: blur(7.5px);
+    -moz-filter: blur(7.5px);
+    -o-filter: blur(7.5px);
+    -ms-filter: blur(7.5px);
+    filter: blur(7.5px);
+  }
+  /* Large media */
   header > svg:not([class^="avatarDecoration_"]):not(:hover) div[class^="banner_"],
   header div[class^="avatar_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
-  div[class^="wrapperPaused_"]:not(:hover) > video,
+  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="wrapperPaused_"]:not(:hover) > video,
+  div[class^="message_"] > div > *:not(div[class^="disableInteraction_"]) > *:not(div[id^="message-accessories-"]) div[class^="wrapperPaused_"]:not(:hover) > video,
   div[class^="inviteSplash_"]:not(:hover) > img,
-  span[class^="clickableSticker_"]:not(:hover) > div:not([role="img"]) img[src$="quality=lossless"],
   nav:not(:hover) > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
-  div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) *:is(img, video) {
+  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"] *:is(img, video),
+  div[class^="message_"] > div > *:not(div[class^="disableInteraction_"]) > *:not(div[id^="message-accessories-"]) div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) *:is(img, video) {
     -webkit-filter: blur(25px);
     -moz-filter: blur(25px);
     -o-filter: blur(25px);
