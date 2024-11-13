@@ -25,11 +25,11 @@
  */
 
 @-moz-document domain("discord.com") {
-  nav:not(:hover) > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
-  div[class^="inviteSplash_"]:not(:hover) > img,
   div[class^="wrapperPaused_"]:not(:hover) > video,
+  div[class^="inviteSplash_"]:not(:hover) > img,
+  nav:not(:hover) > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
   div[id^="message-accessories-"] > span[class^="clickableSticker_"]:not(:hover) > div > div > img,
-  div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) {
+  div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) img {
     -webkit-filter: blur(25px);
     -moz-filter: blur(25px);
     -o-filter: blur(25px);
