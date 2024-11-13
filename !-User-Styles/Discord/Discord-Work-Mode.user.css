@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode
 @namespace      https://andrew-larson.dev/
-@version        1.0.3
+@version        1.0.4
 @description    Blurs all images, stickers, and videos, unless hovered over.
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -27,9 +27,9 @@
 @-moz-document domain("discord.com") {
   div[class^="wrapperPaused_"]:not(:hover) > video,
   div[class^="inviteSplash_"]:not(:hover) > img,
-  nav:not(:hover) > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
   div[id^="message-accessories-"] > span[class^="clickableSticker_"]:not(:hover) > div > div > img,
-  div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) img {
+  nav:not(:hover) > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
+  div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) *:is(img, video) {
     -webkit-filter: blur(25px);
     -moz-filter: blur(25px);
     -o-filter: blur(25px);
