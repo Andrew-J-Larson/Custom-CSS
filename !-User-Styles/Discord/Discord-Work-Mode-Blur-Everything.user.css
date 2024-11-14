@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.4.0
+@version        1.4.1
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -46,6 +46,7 @@
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is([class*="emojiJumbo_"], [class^="welcomeCTA_"])),
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
+  div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
   /* This blurs chat (per message) ... disabled for now, but could be handy in the future */
@@ -60,6 +61,8 @@
   *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
   main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
   *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
+  main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
+  *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
   main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
   *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
   main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
