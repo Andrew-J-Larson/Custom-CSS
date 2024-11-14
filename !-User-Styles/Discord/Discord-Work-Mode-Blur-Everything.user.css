@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.3.9
+@version        1.4.0
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -25,6 +25,14 @@
  */
 
 @-moz-document domain("discord.com") {
+  /* Fix blur splillage */
+  div[class^="emojiSection_"] div > div[class^="assetWrapper_"],
+  span[class^="clickableSticker_"]:not(:hover) > div > div[class^="assetWrapper_"],
+  div[class^="stickerNode_"]:not(:hover) > div[class^="assetWrapper_"],
+  span[class*="emojiJumbo_"]:not(:hover),
+  button[class*="emojiItemMedium_"]:not(:hover) {
+    overflow: hidden !important;
+  }
   /* Text info */
   nav div[class^="headerContent_"]:not(:hover) h2,
   nav ul[aria-label="Channels"]:not(:hover) li[class^="containerDefault_"] *:is(div:is([class^="name_"], [class^="usernameContainer_"]), h3[class^="name_"]),
@@ -39,6 +47,7 @@
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
+  div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
   /* This blurs chat (per message) ... disabled for now, but could be handy in the future */
   /*
   main[class^="chatContent_"]:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
@@ -53,7 +62,12 @@
   *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
   main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
   *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
+  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
+  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
   */
+  div:is([class^="message_"], [class^="messageGroupCozy_"]) > div > *:not(div[class^="disableInteraction_"]) img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
+  div[id^="popout_"] img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
+  li[id^="emoji-picker-grid-"]:not(:hover) img:is([aria-label^=":"], [alt^=":"]),
   li[class^="channel_"]:not(:hover) div[class^="layout_"] > div[class^="content_"],
   div[class^="member_"]:not(:hover) div[class^="memberInner_"] > div[class^="content_"],
   div[class^="peopleListItem_"]:not(:hover) div[class^="userInfo_"] > div[class^="text_"],
@@ -85,10 +99,6 @@
   div[class^="members_"] div[class^="container_"]:not(:hover) > img[class^="contentImage_"],
   div[class^="closedFolderIconWrapper_"]:not(:hover) > div[class^="icon_"],
   div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div:not(:hover) > svg > foreignObject > div > img,
-  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] img:is([aria-label^=":"], [alt^=":"]).jumboable,
-  div:is([class^="message_"], [class^="messageGroupCozy_"]) > div > *:not(div[class^="disableInteraction_"]) img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
-  div[id^="popout_"] img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
-  li[id^="emoji-picker-grid-"]:not(:hover) img:is([aria-label^=":"], [alt^=":"]),
   div:not(:hover) > svg img[class^="guildIcon_"] {
     -webkit-filter: blur(2.5px);
     -moz-filter: blur(2.5px);
@@ -98,11 +108,6 @@
     transition: filter 0.25s;
   }
   /* Medium media */
-  div[class^="emojiSection_"] div > div[class^="assetWrapper_"],
-  span[class^="clickableSticker_"]:not(:hover) > div > div[class^="assetWrapper_"],
-  div[class^="stickerNode_"]:not(:hover) > div[class^="assetWrapper_"] {
-    overflow: hidden !important;
-  }
   div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="assetWrapper_"] > *:is(img, canvas)[data-type="sticker"],
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="assetWrapper_"]:not(:hover) > *:is(img, canvas)[data-type="sticker"],
   div[id^="popout_"] div[class^="assetWrapper_"]:not(:hover) > *:is(img, canvas)[data-type="sticker"],
