@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.3.7
+@version        1.3.8
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -35,15 +35,18 @@
   /* This blurs chat all messages */
   div[class^="chat_"] main:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class^="emojiContainer_"]),
-  div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not([class^="emojiContainer_"]),
+  div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is([class^="emojiContainer_"], [class^="welcomeCTA_"])),
+  div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
   /* This blurs chat per message (disabled for now, but could be handy in the future) */
   /*
-  main[class^="chatContent_"]:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"]))
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"]))
+  main[class^="chatContent_"]:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
+  *:not(main[class^="chatContent_"]) *:not(:hover) > div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
   main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class^="emojiContainer_"]),
   *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[id^="message-reply-context-"] > *:not([class^="emojiContainer_"]),
-  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not([class^="emojiContainer_"]),
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not([class^="emojiContainer_"]),
+  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is([class^="emojiContainer_"], [class^="welcomeCTA_"])),
+  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is([class^="emojiContainer_"], [class^="welcomeCTA_"])),
+  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
+  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
   */
   li[class^="channel_"]:not(:hover) div[class^="layout_"] > div[class^="content_"],
   div[class^="member_"]:not(:hover) div[class^="memberInner_"] > div[class^="content_"],
@@ -54,6 +57,7 @@
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
     filter: blur(5px);
+    transition: filter 0.25s;
   }
   /* Tiny media */
   div[class^="chat_"] section[aria-label="Channel header"]:not(:hover) img[class^="avatar_"],
@@ -64,6 +68,7 @@
     -o-filter: blur(1.25px);
     -ms-filter: blur(1.25px);
     filter: blur(1.25px);
+    transition: filter 0.25s;
   }
   /* Small media */
   div[class^="peopleListItem_"]:not(:hover)  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
@@ -84,26 +89,29 @@
     -o-filter: blur(2.5px);
     -ms-filter: blur(2.5px);
     filter: blur(2.5px);
+    transition: filter 0.25s;
   }
   /* Medium media */
-  div[class^="emojiSection_"] div:not([role="img"]) > div[class^="assetWrapper_"],
-  span[class^="clickableSticker_"]:not(:hover) > div:not([role="img"]) > div[class^="assetWrapper_"],
+  div[class^="emojiSection_"] div > div[class^="assetWrapper_"],
+  span[class^="clickableSticker_"]:not(:hover) > div > div[class^="assetWrapper_"],
   div[class^="stickerNode_"]:not(:hover) > div[class^="assetWrapper_"] {
     overflow: hidden !important;
   }
-  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="assetWrapper_"] > img[data-type="sticker"],
-  div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="assetWrapper_"]:not(:hover) > img[data-type="sticker"],
-  div[id^="popout_"] div[class^="assetWrapper_"]:not(:hover) > img[data-type="sticker"],
-  div[id^="sticker-picker-grid-"]:not(:hover) div[class^="assetWrapper_"]:not(:hover) > img[data-type="sticker"] {
+  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="assetWrapper_"] > *:is(img, canvas)[data-type="sticker"],
+  div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="assetWrapper_"]:not(:hover) > *:is(img, canvas)[data-type="sticker"],
+  div[id^="popout_"] div[class^="assetWrapper_"]:not(:hover) > *:is(img, canvas)[data-type="sticker"],
+  div[id^="sticker-picker-grid-"]:not(:hover) div[class^="assetWrapper_"]:not(:hover) > *:is(img, canvas)[data-type="sticker"] {
     -webkit-filter: blur(7.5px);
     -moz-filter: blur(7.5px);
     -o-filter: blur(7.5px);
     -ms-filter: blur(7.5px);
     filter: blur(7.5px);
+    transition: filter 0.25s;
   }
   /* Large media */
   header > svg:not([class^="avatarDecoration_"]):not(:hover) div[class^="banner_"],
   header div[class^="avatar_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
+  main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"] > div[class^="wrapper_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="wrapperPaused_"] > video,
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="wrapperPaused_"]:not(:hover) > video,
   div[class^="inviteSplash_"]:not(:hover) > img,
@@ -115,5 +123,6 @@
     -o-filter: blur(25px);
     -ms-filter: blur(25px);
     filter: blur(25px);
+    transition: filter 0.25s;
   }
 }
