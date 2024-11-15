@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.4.1
+@version        1.4.2
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -33,40 +33,52 @@
   button[class*="emojiItemMedium_"]:not(:hover) {
     overflow: hidden !important;
   }
-  /* Text info */
+  /* Text info simulated blur (for text that can't be selected with CSS selectors, aka text nodes)
+    /* This blurs chat (all messages) */
+  div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code {
+    /* This blurs chat (per message) ... disabled for now, but could be handy in the future */
+  /*
+    main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code,
+    *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code {
+  */
+    color: transparent;
+    text-shadow: var(--text-normal) 0px 0px 10px;
+    transition: text-shadow 0.25s;
+  }
+  /* Text info blur */
   nav div[class^="headerContent_"]:not(:hover) h2,
   nav ul[aria-label="Channels"]:not(:hover) li[class^="containerDefault_"] *:is(div:is([class^="name_"], [class^="usernameContainer_"]), h3[class^="name_"]),
   div[class^="chat_"] section[aria-label="Channel header"]:not(:hover) div:is([class^="titleWrapper_"], [class^="topic_"]),
   div[class^="outer_"] div:is([class^="usernameRow_"], [class^="tags_"]):not(:hover),
   div[class^="outer_"] div[class^="body_"] *:not(section) > div[class^="markup_"]:not(:hover),
   div[class^="outer_"] div[class^="body_"] section:not(:hover),
-  /* This blurs chat (all messages) */
+    /* This blurs chat (all messages) */
   div[class^="chat_"] main:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
-  div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is([class*="emojiJumbo_"], [class^="welcomeCTA_"])),
+  div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
-  /* This blurs chat (per message) ... disabled for now, but could be handy in the future */
+    /* This blurs chat (per message) ... disabled for now, but could be handy in the future */
   /*
-  main[class^="chatContent_"]:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
-  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
-  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is([class*="emojiJumbo_"], [class^="welcomeCTA_"])),
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is([class*="emojiJumbo_"], [class^="welcomeCTA_"])),
-  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
-  main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
-  *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
-  main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
-  *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
-  main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
-  *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
-  main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
+    main[class^="chatContent_"]:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
+    *:not(main[class^="chatContent_"]) *:not(:hover) > div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
+    main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
+    *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
+    main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
+    *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
+    main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
+    *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > div[class^="welcomeCTA_"] > button > *,
+    main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
+    *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] div[class^="attachment_"] > *,
+    main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
+    *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
+    main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
+    *:not(main[class^="chatContent_"]) *:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div > * > *,
+    main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
+    *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) img:not([aria-label^=":"]).jumboable,
   */
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div > *:not(div[class^="disableInteraction_"]) img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
   div[id^="popout_"] img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
@@ -82,7 +94,7 @@
     filter: blur(5px);
     transition: filter 0.25s;
   }
-  /* Tiny media */
+  /* Tiny media blur */
   div[class^="chat_"] section[aria-label="Channel header"]:not(:hover) img[class^="avatar_"],
   div[class^="voiceUser_"]:not(:hover) div[class^="userAvatar"],
   div[class^="facepile_"] *:not(:hover) img[class^="avatar_"] {
@@ -93,7 +105,7 @@
     filter: blur(1.25px);
     transition: filter 0.25s;
   }
-  /* Small media */
+  /* Small media blur */
   div[class^="peopleListItem_"]:not(:hover)  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div:is([class^="interactive_"], [class^="member_"]):not(:hover) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
@@ -110,7 +122,7 @@
     filter: blur(2.5px);
     transition: filter 0.25s;
   }
-  /* Medium media */
+  /* Medium media blur */
   div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[id^="message-accessories-"] div[class^="assetWrapper_"] > *:is(img, canvas)[data-type="sticker"],
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="assetWrapper_"]:not(:hover) > *:is(img, canvas)[data-type="sticker"],
   div[id^="popout_"] div[class^="assetWrapper_"]:not(:hover) > *:is(img, canvas)[data-type="sticker"],
@@ -122,7 +134,7 @@
     filter: blur(7.5px);
     transition: filter 0.25s;
   }
-  /* Large media */
+  /* Large media blur */
   header > svg:not([class^="avatarDecoration_"]):not(:hover) div[class^="banner_"],
   header div[class^="avatar_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
   main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"] > div[class^="wrapper_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
