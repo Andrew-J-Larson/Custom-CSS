@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.8.7
+@version        1.8.8
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -133,9 +133,9 @@
   div[class^="chat_"] div[class^="videoControls_"] section:not(:hover) div[class^="children_"] > div[class^="titleWrapper_"],
   div[class^="chat_"] div[class^="videoControls_"] section:not(:hover) div[class^="children_"] > div[class^="container_"] > *:not([class^="divider_"]),
   div[class^="outer_"] div:is([class^="usernameRow_"], [class^="tags_"], [class^="mutuals_"]):not(:hover),
-  div[class^="outer_"] div[class^="role_"]:not(:hover) > *,
   div[class^="outer_"] div[class^="editor_"]:not(:hover) div[class^="placeholder_"],
   div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="body_"] div[class^="descriptionClamp_"]:not(:hover),
+  div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="role_"]:not(:hover) > *,
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] *:not(section) > div[class^="markup_"]:not(:hover),
   div[class^="outer_"] header span[class^="statusBubble_"]:not(:hover) > *,
   div[class^="outer_"] div[class^="body_"] section:not(:hover),
@@ -216,9 +216,9 @@
   div[class^="chat_"] div[class^="videoControls_"] section div[class^="children_"] > div[class^="titleWrapper_"],
   div[class^="chat_"] div[class^="videoControls_"] section div[class^="children_"] > div[class^="container_"] > *:not([class^="divider_"]),
   div[class^="outer_"] div:is([class^="usernameRow_"], [class^="tags_"], [class^="mutuals_"]),
-  div[class^="outer_"] div[class^="role_"] > *,
   div[class^="outer_"] div[class^="editor_"] div[class^="placeholder_"],
   div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="body_"] div[class^="descriptionClamp_"],
+  div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="role_"] > *,
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] *:not(section) > div[class^="markup_"],
   div[class^="outer_"] header span[class^="statusBubble_"] > *,
   div[class^="outer_"] div[class^="body_"] section,
