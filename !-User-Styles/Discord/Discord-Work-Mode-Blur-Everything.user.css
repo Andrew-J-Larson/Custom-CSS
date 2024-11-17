@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.8.8
+@version        1.8.9
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -137,6 +137,7 @@
   div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="body_"] div[class^="descriptionClamp_"]:not(:hover),
   div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="role_"]:not(:hover) > *,
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] *:not(section) > div[class^="markup_"]:not(:hover),
+  div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div:is([class*="listName_"], [class*="listRowContent_"]),
   div[class^="outer_"] header span[class^="statusBubble_"]:not(:hover) > *,
   div[class^="outer_"] div[class^="body_"] section:not(:hover),
   div[class^="callContainer_"] div[class^="tile_"]:not(:hover) div[class^="overlayBottom_"] span[class^="overlayTitleText_"],
@@ -220,6 +221,7 @@
   div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="body_"] div[class^="descriptionClamp_"],
   div[class^="outer_"] div[class^="inner_"][class*="biteSize_"] div[class^="role_"] > *,
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] *:not(section) > div[class^="markup_"],
+  div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div:is([class*="listName_"], [class*="listRowContent_"]),
   div[class^="outer_"] header span[class^="statusBubble_"] > *,
   div[class^="outer_"] div[class^="body_"] section,
   div[class^="callContainer_"] div[class^="tile_"] div[class^="overlayBottom_"] span[class^="overlayTitleText_"],
@@ -402,6 +404,8 @@
   /* Small media blur */
   div[class^="callContainer_"] div[class^="tile_"]:not(:hover) div[class^="background_"] > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div[class^="peopleListItem_"]:not(:hover) div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div[class*="listAvatar_"] img[class^="avatar_"],
+  div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div[class*="listAvatar_"][style^="background-image:"],
   div:is([class^="interactive_"], [class^="member_"]):not(:hover) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[class^="contents_"]:not(:hover) > img[class^="avatar_"],
@@ -416,6 +420,8 @@
   /* Small media blur undo */
   div[class^="callContainer_"] div[class^="tile_"] div[class^="background_"] > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div[class^="peopleListItem_"] div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div[class*="listAvatar_"] img[class^="avatar_"],
+  div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div[class*="listAvatar_"][style^="background-image:"],
   div:is([class^="interactive_"], [class^="member_"]) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"] div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[class^="contents_"] > img[class^="avatar_"],
