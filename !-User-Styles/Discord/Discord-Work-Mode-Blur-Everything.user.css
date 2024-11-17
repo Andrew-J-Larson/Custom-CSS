@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.9.0
+@version        1.9.1
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -460,8 +460,8 @@
   *:is(div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"], div[aria-labelledby^="#forum-grid-header-section-"], div[data-list-id^="forum-channel-list-"] > div[role="list"]) div[class^="wrapperPaused_"]:not(:hover) > video,
   div[class^="inviteSplash_"]:not(:hover) > img,
   nav:not(:hover) > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
-  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] div[id^="message-accessories-"] div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"] *:is(img, video),
-  *:is(div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"], div[aria-labelledby^="#forum-grid-header-section-"], div[data-list-id^="forum-channel-list-"] > div[role="list"]) div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) *:is(img, video) {
+  div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] div[id^="message-accessories-"] div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"] *:is(img, video):not([class^="imageError_"]),
+  *:is(div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"], div[aria-labelledby^="#forum-grid-header-section-"], div[data-list-id^="forum-channel-list-"] > div[role="list"]) div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"]:not(:hover) *:is(img, video):not([class^="imageError_"]) {
     filter: blur(var(--workModeLargeBlur));
     animation: large_blur var(--workModeBlurSpeed);
   }
@@ -473,8 +473,8 @@
   *:is(div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"], div[aria-labelledby^="#forum-grid-header-section-"], div[data-list-id^="forum-channel-list-"] > div[role="list"]) div[class^="wrapperPaused_"] > video,
   div[class^="inviteSplash_"] > img,
   nav > div[class^="container_"] > div[class^="animatedContainer_"] > div[class^="bannerImage_"] > img,
-  div[class^="content_"] div[class^="message_"] > div > div[class^="disableInteraction_"] div[id^="message-accessories-"] div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"] *:is(img, video),
-  *:is(div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"], div[aria-labelledby^="#forum-grid-header-section-"], div[data-list-id^="forum-channel-list-"] > div[role="list"]) div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"] *:is(img, video) {
+  div[class^="content_"] div[class^="message_"] > div > div[class^="disableInteraction_"] div[id^="message-accessories-"] div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"] *:is(img, video):not([class^="imageError_"]),
+  *:is(div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"], div[aria-labelledby^="#forum-grid-header-section-"], div[data-list-id^="forum-channel-list-"] > div[role="list"]) div[class^="imageContent_"] > div[class^="imageContainer_"] > div[class^="imageWrapper_"] *:is(img, video):not([class^="imageError_"]) {
     animation: large_blur_undo var(--workModeBlurSpeed);
   }
 }
