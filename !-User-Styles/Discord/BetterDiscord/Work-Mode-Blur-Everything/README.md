@@ -1,5 +1,5 @@
 # Work Mode (Blur Everything)
-Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
+All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
 
 ## Preview
 ![Preview](https://github.com/Andrew-J-Larson/Custom-CSS/blob/main/!-User-Styles/Discord/BetterDiscord/Work-Mode-Blur-Everything/Preview.png?raw=true)

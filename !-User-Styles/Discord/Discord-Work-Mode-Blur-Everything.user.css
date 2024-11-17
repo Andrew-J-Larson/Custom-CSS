@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.9.5
-@description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
+@version        1.9.6
+@description    All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
 @updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/Discord/Discord-Work-Mode-Blur-Everything.user.css
