@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.9.4
+@version        1.9.5
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -213,6 +213,7 @@
   div[class^="member_"]:not(:hover) div[class^="memberInner_"] > div[class^="content_"],
   div[class^="peopleListItem_"]:not(:hover) div[class^="userInfo_"] > div[class^="text_"],
   div[class^="nowPlayingColumn_"] div[class^="itemCard_"]:not(:hover) header *:is(img:not([class^="avatar_"]), div[data-text-variant="text-md/semibold"]),
+  div[class^="members_"] h3[class^="membersGroup_"]:not(:hover) > span:not([class^="headerContainer_"]),
   div[class^="members_"] div[class^="container_"]:not(:hover) > div[class^="infoSection_"] > div[class^="userSection_"] > span[class^="userName_"] {
     filter: blur(var(--workModeSingleLineTextBlur));
     animation: single_line_text_blur var(--workModeBlurSpeed);
@@ -304,6 +305,7 @@
   div[class^="member_"] div[class^="memberInner_"] > div[class^="content_"],
   div[class^="peopleListItem_"] div[class^="userInfo_"] > div[class^="text_"],
   div[class^="nowPlayingColumn_"] div[class^="itemCard_"] header *:is(img:not([class^="avatar_"]), div[data-text-variant="text-md/semibold"]),
+  div[class^="members_"] h3[class^="membersGroup_"] > span:not([class^="headerContainer_"]),
   div[class^="members_"] div[class^="container_"] > div[class^="infoSection_"] > div[class^="userSection_"] > span[class^="userName_"] {
     animation: single_line_text_blur_undo var(--workModeBlurSpeed);
   }
