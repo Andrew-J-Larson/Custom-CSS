@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.6.1
+@version        1.7.0
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -135,9 +135,13 @@
   nav div[class^="headerContent_"]:not(:hover) h2,
   nav ul[aria-label="Channels"]:not(:hover) li[class^="containerDefault_"] *:is(div:is([class^="name_"], [class^="usernameContainer_"]), h3[class^="name_"]),
   div[class^="chat_"] section[aria-label="Channel header"]:not(:hover) div:is([class^="titleWrapper_"], [class^="topic_"]),
+  div[class^="chat_"] div[class^="videoControls_"] section:not(:hover) div[class^="children_"] > div[class^="titleWrapper_"],
+  div[class^="chat_"] div[class^="videoControls_"] section:not(:hover) div[class^="children_"] > div[class^="container_"] > *:not([class^="divider_"]),
   div[class^="outer_"] div:is([class^="usernameRow_"], [class^="tags_"]):not(:hover),
   div[class^="outer_"] div[class^="body_"] *:not(section) > div[class^="markup_"]:not(:hover),
   div[class^="outer_"] div[class^="body_"] section:not(:hover),
+  div[class^="callContainer_"] div[class^="tile_"]:not(:hover) div[class^="overlayBottom_"] span[class^="overlayTitleText_"],
+  div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"]:not(:hover) > *:is(h2, div[class^="participantsRow_"]),
     /* This blurs chat (all messages) ... disabled for now, but could be handy in the future */
   /*
     div[class^="chat_"]:not(:hover) div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
@@ -193,6 +197,7 @@
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div > *:not(div[class^="disableInteraction_"]) img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
   div[id^="popout_"] img:is([aria-label^=":"], [alt^=":"]).jumboable:not(:hover),
   li[id^="emoji-picker-grid-"]:not(:hover) img:is([aria-label^=":"], [alt^=":"]),
+  div[class^="slot_"]:not(:hover) img:not([data-name]),
   li[class^="channel_"]:not(:hover) div[class^="layout_"] > div[class^="content_"],
   div[class^="member_"]:not(:hover) div[class^="memberInner_"] > div[class^="content_"],
   div[class^="peopleListItem_"]:not(:hover) div[class^="userInfo_"] > div[class^="text_"],
@@ -204,9 +209,13 @@
   nav div[class^="headerContent_"] h2,
   nav ul[aria-label="Channels"] li[class^="containerDefault_"] *:is(div:is([class^="name_"], [class^="usernameContainer_"]), h3[class^="name_"]),
   div[class^="chat_"] section[aria-label="Channel header"] div:is([class^="titleWrapper_"], [class^="topic_"]),
+  div[class^="chat_"] div[class^="videoControls_"] section div[class^="children_"] > div[class^="titleWrapper_"],
+  div[class^="chat_"] div[class^="videoControls_"] section div[class^="children_"] > div[class^="container_"] > *:not([class^="divider_"]),
   div[class^="outer_"] div:is([class^="usernameRow_"], [class^="tags_"]),
   div[class^="outer_"] div[class^="body_"] *:not(section) > div[class^="markup_"],
   div[class^="outer_"] div[class^="body_"] section,
+  div[class^="callContainer_"] div[class^="tile_"] div[class^="overlayBottom_"] span[class^="overlayTitleText_"],
+  div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"] > *:is(h2, div[class^="participantsRow_"]),
     /* This undos blurs chat (all messages) ... disabled for now, but could be handy in the future */
   /*
     div[class^="chat_"] div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
@@ -262,6 +271,7 @@
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div > *:not(div[class^="disableInteraction_"]) img:is([aria-label^=":"], [alt^=":"]).jumboable,
   div[id^="popout_"] img:is([aria-label^=":"], [alt^=":"]).jumboable,
   li[id^="emoji-picker-grid-"] img:is([aria-label^=":"], [alt^=":"]),
+  div[class^="slot_"] img:not([data-name]),
   li[class^="channel_"] div[class^="layout_"] > div[class^="content_"],
   div[class^="member_"] div[class^="memberInner_"] > div[class^="content_"],
   div[class^="peopleListItem_"] div[class^="userInfo_"] > div[class^="text_"],
@@ -286,7 +296,8 @@
 
 
   /* Small media blur */
-  div[class^="peopleListItem_"]:not(:hover)  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="callContainer_"] div[class^="tile_"]:not(:hover) div[class^="background_"] > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="peopleListItem_"]:not(:hover) div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div:is([class^="interactive_"], [class^="member_"]):not(:hover) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[class^="contents_"]:not(:hover) > img[class^="avatar_"],
@@ -299,7 +310,8 @@
     animation: small_blur var(--workModeBlurSpeed);
   }
   /* Small media blur undo */
-  div[class^="peopleListItem_"]  div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="callContainer_"] div[class^="tile_"] div[class^="background_"] > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="peopleListItem_"] div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div:is([class^="interactive_"], [class^="member_"]) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"] div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
   div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[class^="contents_"] > img[class^="avatar_"],
