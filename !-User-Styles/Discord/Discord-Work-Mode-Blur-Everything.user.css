@@ -29,8 +29,8 @@
   :root {
     --workModeBlurSpeed: 0.1s;
     --workModeSingleLineTextBlur: 5px;
-    --workModeMultilineTextBlur: 15px; /* necessary because of ASCII art */
-    --workModeNormalTextSimBlur: var(--text-normal) 0px 0px 30px; /* 2x text blur, but basing off of multiline for now */
+    --workModeMultilineTextBlur: 25px; /* necessary because of ASCII art */
+    --workModeNormalTextSimBlur: var(--text-normal) 0px 0px 50px; /* 2x text blur, but basing off of multiline for now */
     --workModeTinyBlur: 1.25px;
     --workModeSmallBlur: 2.5px;
     --workModeMediumBlur: 7.5px;
