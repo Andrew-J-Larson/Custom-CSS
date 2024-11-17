@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.7.0
+@version        1.8.0
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -93,6 +93,7 @@
   span[class*="emojiJumbo_"]:not(:hover),
   button[class*="emojiItemMedium_"]:not(:hover),
   div[class^="reaction_"]:not(:hover),
+  div[class^="rsvpCount_"]:not(:hover),
     /* This affects chat (all messages) ... disabled for now, but could be handy in the future */
   /*
     div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > * {
@@ -144,6 +145,7 @@
   div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"]:not(:hover) > *:is(h2, div[class^="participantsRow_"]),
     /* This blurs chat (all messages) ... disabled for now, but could be handy in the future */
   /*
+    div[class^="layerContainer_"]:not(:hover) > div[class^="layer_"] div[class^="content_"] > div[class^="card_"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
     div[class^="chat_"]:not(:hover) div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
     div[class^="chat_"]:not(:hover) div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"] > *,
     div[class^="layerContainer_"]:not(:hover) > div[id^="popout_"] div[aria-label="Filter by tags"] div[class^="pill_"] > *,
@@ -165,6 +167,7 @@
     div[class^="chat_"] main:not(:hover) div[class^="typing_"] > div[class^="typingDots_"] > span[class^="text"] > strong,
   */
     /* This blurs chat (per message) */ /**/
+  div[class^="layerContainer_"] > div[class^="layer_"] div[class^="content_"] > div[class^="card_"]:not(:hover) *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"]:not(:hover) > *,
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"]:not(:hover) > *,
   div[id^="popout_"] div[aria-label="Filter by tags"] div[class^="pill_"]:not(:hover) > *,
@@ -218,6 +221,7 @@
   div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"] > *:is(h2, div[class^="participantsRow_"]),
     /* This undos blurs chat (all messages) ... disabled for now, but could be handy in the future */
   /*
+    div[class^="layerContainer_"] > div[class^="layer_"] div[class^="content_"] > div[class^="card_"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
     div[class^="chat_"] div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
     div[class^="chat_"] div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"] > *,
     div[class^="layerContainer_"] > div[id^="popout_"] div[aria-label="Filter by tags"] div[class^="pill_"] > *,
@@ -239,6 +243,7 @@
     div[class^="chat_"] main div[class^="typing_"] > div[class^="typingDots_"] > span[class^="text"] > strong,
   */
     /* This undos blurs chat (per message) */ /**/
+  div[class^="layerContainer_"] > div[class^="layer_"] div[class^="content_"] > div[class^="card_"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"] > *,
   div[id^="popout_"] div[aria-label="Filter by tags"] div[class^="pill_"] > *,
