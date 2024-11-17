@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.9.1
+@version        1.9.2
 @description    Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -177,7 +177,7 @@
   section[aria-label="Thread header"]:not(:hover) h2,
   section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"]:not(:hover) > h3[class*="header_"],
   section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"]:not(:hover) > div[class^="tags_"] > div[class^="pill_"] > *,
-  main[class^="chatContent_"]:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
+  main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"]:not(:hover) > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
   main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
   *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
   main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > h3[class^="header_"] > *,
