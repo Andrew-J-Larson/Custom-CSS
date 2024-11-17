@@ -1,4 +1,4 @@
-# BetterDiscord - Work Mode (Blur Everything)
+# Work Mode (Blur Everything)
 Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
 
 ## Preview
