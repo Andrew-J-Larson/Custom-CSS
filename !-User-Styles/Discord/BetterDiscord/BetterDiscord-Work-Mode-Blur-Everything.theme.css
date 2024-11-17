@@ -1,10 +1,12 @@
 /**
  * @name Work Mode (Blur Everything)
  * @author Andrew Larson
- * @version 1.9.5
  * @description Unless hovered over, some text (only identifiable friends info) and all media elements are blurred (avatar/profile images, server icon/banner/splash images, user created stickers/videos/images (works in embeds too), and user created jumbo sized emojis).
+ * @version 1.9.5
+ * @authorLink https://andrew-larson.dev/
+ * @donate https://buymeacoffee.com/Andrew.J.Larson
+ * @website https://github.com/Andrew-J-Larson/Custom-CSS/tree/main/!-User-Styles/Discord/BetterDiscord
  * @source https://github.com/Andrew-J-Larson/Custom-CSS/blob/main/!-User-Styles/Discord/Discord-Work-Mode-Blur-Everything.user.css
- * @website https://andrew-larson.dev/
  */
 
 /* Copyright (C) 2024  Andrew Larson (github@andrew-larson.dev)
@@ -22,7 +24,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
 
 /* Blur variables */
 :root {
