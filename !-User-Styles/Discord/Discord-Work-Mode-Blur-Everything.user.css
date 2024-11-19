@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.9.8
+@version        1.9.9
 @description    All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -24,7 +24,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@-moz-document domain("discord.com") {
+ @-moz-document domain("discord.com") {
   /* Blur variables */
   :root {
     --workModeBlurSpeed: 0.1s;
@@ -144,6 +144,7 @@
   div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"]:not(:hover) > *:is(h2, div[class^="participantsRow_"]),
     /* This blurs chat (all messages) ... disabled for now, but could be handy in the future */
   /*
+    div[class^="layerContainer_"]:not(:hover) > div[class^="layer_"] div[class^="modal_"] *:is(h1[class*="title_"] > strong, div[class^="headerChannelContainer_"] > div, input[aria-label="Invite link"])
     div[class^="layerContainer_"]:not(:hover) > div[class^="layer_"] div[class^="content_"] > div[class^="card_"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
     div[class^="chat_"]:not(:hover) div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
     div[class^="chat_"]:not(:hover) div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"] > *,
@@ -171,6 +172,7 @@
     div[class^="chat_"] main:not(:hover) div[class^="typing_"] > div[class^="typingDots_"] > span[class^="text"] > strong,
   */
     /* This blurs chat (per message) */ /**/
+  div[class^="layerContainer_"] > div[class^="layer_"] div[class^="modal_"] *:is(h1[class*="title_"] > strong, div[class^="headerChannelContainer_"] > div, input[aria-label="Invite link"]):not(:hover),
   div[class^="layerContainer_"] > div[class^="layer_"] div[class^="content_"] > div[class^="card_"]:not(:hover) *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"]:not(:hover) > *,
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"]:not(:hover) > *,
@@ -218,6 +220,7 @@
   li[class^="channel_"]:not(:hover) div[class^="layout_"] > div[class^="content_"],
   div[class^="member_"]:not(:hover) div[class^="memberInner_"] > div[class^="content_"],
   div[class^="peopleListItem_"]:not(:hover) div[class^="userInfo_"] > div[class^="text_"],
+  div[class^="layer_"] div[class^="inviteRow_"]:not(:hover) div[class^="inviteRowName_"],
   div[class^="nowPlayingColumn_"] div[class^="itemCard_"]:not(:hover) header *:is(img:not([class^="avatar_"]), div[data-text-variant="text-md/semibold"]),
   div[class^="members_"] h3[class^="membersGroup_"]:not(:hover) > span:not([class^="headerContainer_"]),
   div[class^="members_"] div[class^="container_"]:not(:hover) > div[class^="infoSection_"] > div[class^="userSection_"] > span[class^="userName_"] {
@@ -242,6 +245,7 @@
   div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"] > *:is(h2, div[class^="participantsRow_"]),
     /* This undos blurs chat (all messages) ... disabled for now, but could be handy in the future */
   /*
+    div[class^="layerContainer_"]:not(:hover) > div[class^="layer_"] div[class^="modal_"] *:is(h1[class*="title_"] > strong, div[class^="headerChannelContainer_"] > div, input[aria-label="Invite link"])
     div[class^="layerContainer_"] > div[class^="layer_"] div[class^="content_"] > div[class^="card_"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
     div[class^="chat_"] div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
     div[class^="chat_"] div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"] > *,
@@ -269,6 +273,7 @@
     div[class^="chat_"] main div[class^="typing_"] > div[class^="typingDots_"] > span[class^="text"] > strong,
   */
     /* This undos blurs chat (per message) */ /**/
+  div[class^="layerContainer_"] > div[class^="layer_"] div[class^="modal_"] *:is(h1[class*="title_"] > strong, div[class^="headerChannelContainer_"] > div, input[aria-label="Invite link"]),
   div[class^="layerContainer_"] > div[class^="layer_"] div[class^="content_"] > div[class^="card_"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h2[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class*="externalLocation_"]),
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="descriptionContainer_"] > *,
   div[class^="card_"][data-list-item-id$="___forum-channel-header"] div[class^="tagsContainer_"] div[class^="tagList_"] div[class^="pill_"] > *,
@@ -316,6 +321,7 @@
   li[class^="channel_"] div[class^="layout_"] > div[class^="content_"],
   div[class^="member_"] div[class^="memberInner_"] > div[class^="content_"],
   div[class^="peopleListItem_"] div[class^="userInfo_"] > div[class^="text_"],
+  div[class^="layer_"] div[class^="inviteRow_"] div[class^="inviteRowName_"],
   div[class^="nowPlayingColumn_"] div[class^="itemCard_"] header *:is(img:not([class^="avatar_"]), div[data-text-variant="text-md/semibold"]),
   div[class^="members_"] h3[class^="membersGroup_"] > span:not([class^="headerContainer_"]),
   div[class^="members_"] div[class^="container_"] > div[class^="infoSection_"] > div[class^="userSection_"] > span[class^="userName_"] {
@@ -432,6 +438,8 @@
   /* Small media blur */
   div[class^="callContainer_"] div[class^="tile_"]:not(:hover) div[class^="background_"] > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div[class^="peopleListItem_"]:not(:hover) div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="layer_"] div[class^="inviteRow_"]:not(:hover) div[class^="inviteRowInfo_"] img[class^="avatar_"],
+  div[class^="peopleListItem_"]:not(:hover) div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div[class*="listAvatar_"] img[class^="avatar_"],
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div[class*="listAvatar_"][style^="background-image:"],
   div:is([class^="interactive_"], [class^="member_"]):not(:hover) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
@@ -450,6 +458,7 @@
   /* Small media blur undo */
   div[class^="callContainer_"] div[class^="tile_"] div[class^="background_"] > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
   div[class^="peopleListItem_"] div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
+  div[class^="layer_"] div[class^="inviteRow_"] div[class^="inviteRowInfo_"] img[class^="avatar_"],
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div[class*="listAvatar_"] img[class^="avatar_"],
   div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div[class*="listAvatar_"][style^="background-image:"],
   div:is([class^="interactive_"], [class^="member_"]) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
