@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        1.9.7
+@version        1.9.8
 @description    All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -483,7 +483,7 @@
 
 
   /* Large media blur */
-  header > svg:not([class^="avatarDecoration_"]):not(:hover) div[class^="banner_"],
+  header > svg:not([class^="avatarDecoration_"]):not(:hover) div[class^="banner_"][style^="background-image:"],
   header div[class^="avatar_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
   main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"] > div[class^="wrapper_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] div[id^="message-accessories-"] div[class^="wrapperPaused_"] > video,
@@ -496,7 +496,7 @@
     animation: large_blur var(--workModeBlurSpeed);
   }
   /* Large media blur undo */
-  header > svg:not([class^="avatarDecoration_"]) div[class^="banner_"],
+  header > svg:not([class^="avatarDecoration_"]) div[class^="banner_"][style^="background-image:"],
   header div[class^="avatar_"] svg:not([class^="avatarDecoration_"]) img,
   main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"] > div[class^="wrapper_"] svg:not([class^="avatarDecoration_"]) img,
   div[class^="content_"] div[class^="message_"] > div > div[class^="disableInteraction_"] div[id^="message-accessories-"] div[class^="wrapperPaused_"] > video,
