@@ -2,7 +2,7 @@
  * @name Work Mode (Blur Everything)
  * @author Andrew Larson
  * @description All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
- * @version 2.0.0
+ * @version 2.0.1
  * @authorLink https://andrew-larson.dev/
  * @donate https://buymeacoffee.com/Andrew.J.Larson
  * @website https://github.com/Andrew-J-Larson/Custom-CSS/tree/main/!-User-Styles/Discord/BetterDiscord/Work-Mode-Blur-Everything
@@ -116,11 +116,14 @@ div[class^="rsvpCount_"]:not(:hover),
 div[class^="role_"]:not(:hover),
   /* This affects chat (all messages) ... disabled for now, but could be handy in the future */
 /*
-  div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > * {
+  div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > *,
+  div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[class^="footerContainer_"] {
 */
   /* This affects chat (per message) */ /**/
 main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > *,
-*:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > * {
+*:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > *,
+main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > *,
+*:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > * {
 /**/
   overflow: hidden !important;
 }
@@ -162,6 +165,7 @@ div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"]:no
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > h3[class^="header_"] > *,
   div[class^="chat_"] main:not(:hover) div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"], [class*="containerWithImage_"])),
   div[class^="chat_"] main:not(:hover) div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > div[class*="containerWithImage_"] *:is(div[class^="imageContainer_"] > img.emoji, div[class^="description_"] div[class^="fontScaling_"]),
+  div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[class^="footerContainer_"] > *:is(img[class^="originIcon"], div[class*="footerText_"]),
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
@@ -196,6 +200,8 @@ main[class^="chatContent_"]:not(:hover) div[class^="message_"][class*="isSystemM
 *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"], [class*="containerWithImage_"])),
 main[class^="chatContent_"]:not(:hover) div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > div[class*="containerWithImage_"] *:is(div[class^="imageContainer_"] > img.emoji, div[class^="description_"] div[class^="fontScaling_"]),
 *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > div[class*="containerWithImage_"] *:is(div[class^="imageContainer_"] > img.emoji, div[class^="description_"] div[class^="fontScaling_"]),
+main[class^="chatContent_"] div:is([class^="message_"]:not(:hover), [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[class^="footerContainer_"] > *:is(img[class^="originIcon"], div[class*="footerText_"]),
+*:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[class^="footerContainer_"] > *:is(img[class^="originIcon"], div[class*="footerText_"]),
 main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]):not(:hover) div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
 *:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
 main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
@@ -267,6 +273,7 @@ div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"] > 
   div[class^="chat_"] main div[class^="message_"] div[class^="contents_"] > h3[class^="header_"] > *,
   div[class^="chat_"] main div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"], [class*="containerWithImage_"])),
   div[class^="chat_"] main div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > div[class*="containerWithImage_"] *:is(div[class^="imageContainer_"] > img.emoji, div[class^="description_"] div[class^="fontScaling_"]),
+  div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[class^="footerContainer_"] > *:is(img[class^="originIcon"], div[class*="footerText_"]),
   div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
   div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
   div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
@@ -301,6 +308,8 @@ main[class^="chatContent_"] div[class^="message_"][class*="isSystemMessage"] div
 *:not(main[class^="chatContent_"]) * > div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"], [class*="containerWithImage_"])),
 main[class^="chatContent_"] div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > div[class*="containerWithImage_"] *:is(div[class^="imageContainer_"] > img.emoji, div[class^="description_"] div[class^="fontScaling_"]),
 *:not(main[class^="chatContent_"]) * > div[class^="message_"][class*="isSystemMessage"] div[class^="contents_"] > div[id^="message-content-"] > div[class*="containerWithImage_"] *:is(div[class^="imageContainer_"] > img.emoji, div[class^="description_"] div[class^="fontScaling_"]),
+main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[class^="footerContainer_"] > *:is(img[class^="originIcon"], div[class*="footerText_"]),
+*:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[class^="footerContainer_"] > *:is(img[class^="originIcon"], div[class*="footerText_"]),
 main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
 *:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
 main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
@@ -341,12 +350,15 @@ div[class^="members_"] div[class^="container_"] > div[class^="infoSection_"] > d
   /* This blurs chat (all messages) ... disabled for now, but could be handy in the future */
 /*
   div[class^="chat_"] main:not(:hover) div[class^="message_"]:not([class*="isSystemMessage"]) div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
+  div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[id^="message-content"] > *:not([class*="emojiJumbo_"]),
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code > span,
   div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] pre code
 */
   /* This blurs chat (per message) */ /**/
 main[class^="chatContent_"]:not(:hover) div[class^="message_"]:not([class*="isSystemMessage"]) div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
 *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"]:not([class*="isSystemMessage"]) div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
+main[class^="chatContent_"] div:is([class^="message_"]:not(:hover), [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[id^="message-content"] > *:not([class*="emojiJumbo_"]),
+*:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[id^="message-content"] > *:not([class*="emojiJumbo_"]),
 main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code > span,
 *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code > span,
 main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] pre code,
@@ -360,12 +372,15 @@ main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="mes
   /* This undos blurs chat (all messages) ... disabled for now, but could be handy in the future */
 /*
   div[class^="chat_"] main div[class^="message_"]:not([class*="isSystemMessage"]) div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
+  div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[id^="message-content"] > *:not([class*="emojiJumbo_"]),
   div[class^="chat_"] main div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code > span,
   div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] pre code
 */
   /* This undos blurs chat (per message) */ /**/
 main[class^="chatContent_"] div[class^="message_"]:not([class*="isSystemMessage"]) div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
 *:not(main[class^="chatContent_"]) * > div[class^="message_"]:not([class*="isSystemMessage"]) div[class^="contents_"] > div[id^="message-content-"] > *:not(*:is(pre, [class*="emojiJumbo_"], [class^="welcomeCTA_"])),
+main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[id^="message-content"] > *:not([class*="emojiJumbo_"]),
+*:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] > div[class^="container_"] > div[class^="content_"] > div[id^="message-content"] > *:not([class*="emojiJumbo_"]),
 main[class^="chatContent_"] div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code > span,
 *:not(main[class^="chatContent_"]) * > div[class^="message_"] div[class^="contents_"] > *:is(h3[class^="header_"], div[id^="message-content-"]) > pre code > span,
 main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] pre code,
