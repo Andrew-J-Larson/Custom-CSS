@@ -2,7 +2,7 @@
  * @name Work Mode (Blur Everything)
  * @author Andrew Larson
  * @description All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
- * @version 2.0.2
+ * @version 2.0.3
  * @authorLink https://andrew-larson.dev/
  * @donate https://buymeacoffee.com/Andrew.J.Larson
  * @website https://github.com/Andrew-J-Larson/Custom-CSS/tree/main/!-User-Styles/Discord/BetterDiscord/Work-Mode-Blur-Everything
@@ -160,6 +160,7 @@ div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"]:no
   div[class^="container_"]:not(:hover) section[aria-label="Thread header"] h2,
   div[class^="container_"]:not(:hover) section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"] > h3[class*="header_"],
   div[class^="container_"]:not(:hover) section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"] > div[class^="tags_"] > div[class^="pill_"] > *,
+  div[class^="chat_"] main:not(:hover) div[id^="chat-messages-"][class^="container_"]:first-of-type > div[class^="container_"] > div[class^="inner"] > div > h3[class*="titleName_"] > p:nth-child(2),
   div[class^="chat_"] main:not(:hover) div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
   div[class^="chat_"] main:not(:hover) div[class^="message_"] div[class^="contents_"] > h3[class^="header_"] > *,
@@ -191,6 +192,7 @@ section[class^="chatContent_"] ol > div[class^="container_"]:not(:hover) > div[c
 section[aria-label="Thread header"]:not(:hover) h2,
 section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"]:not(:hover) > h3[class*="header_"],
 section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"]:not(:hover) > div[class^="tags_"] > div[class^="pill_"] > *,
+main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"]:first-of-type > div[class^="container_"] > div[class^="inner"] > div > h3[class*="titleName_"] > p:nth-child(2):not(:hover),
 main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"]:not(:hover) > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
 main[class^="chatContent_"]:not(:hover) div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
 *:not(main[class^="chatContent_"]) *:not(:hover) > div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
@@ -269,6 +271,7 @@ div[class^="callContainer_"] > div[class^="root_"] > div[class^="container_"] > 
   div[class^="container_"] section[aria-label="Thread header"] h2,
   div[class^="container_"] section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"] > h3[class*="header_"],
   div[class^="container_"] section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"] > div[class^="tags_"] > div[class^="pill_"] > *,
+  div[class^="chat_"] main div[id^="chat-messages-"][class^="container_"]:first-of-type > div[class^="container_"] > div[class^="inner"] > div > h3[class*="titleName_"] > p:nth-child(2),
   div[class^="chat_"] main div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
   div[class^="chat_"] main div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
   div[class^="chat_"] main div[class^="message_"] div[class^="contents_"] > h3[class^="header_"] > *,
@@ -300,6 +303,7 @@ section[class^="chatContent_"] ol > div[class^="container_"] > div[class^="react
 section[aria-label="Thread header"] h2,
 section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"] > h3[class*="header_"],
 section[class^="chatContent_"] * > div[id^="chat-messages-"][class^="container_"] > div[class^="tags_"] > div[class^="pill_"] > *,
+main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"]:first-of-type > div[class^="container_"] > div[class^="inner"] > div > h3[class*="titleName_"] > p:nth-child(2),
 main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"] > *:is(h3[class*="header_"], div:is([class*="description_"], [class*="members_"])),
 main[class^="chatContent_"] div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
 *:not(main[class^="chatContent_"]) * > div[class^="message_"] div[id^="message-reply-context-"] > *:not([class*="emojiJumbo_"]),
