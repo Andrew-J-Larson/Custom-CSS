@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        2.0.3
+@version        2.0.4
 @description    All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -130,6 +130,7 @@
 
 
   /* Single line text info blur */
+  nav div[class^="channelNotice_"]:not(:hover) div:is([class*="eventName_"], [class*="channelName_"]),
   nav div[class^="headerContent_"]:not(:hover) h2,
   nav ul[aria-label="Channels"]:not(:hover) li[class^="containerDefault_"] *:is(div:is([class^="name_"], [class^="usernameContainer_"]), h3[class^="name_"]),
   div[class^="chat_"] section[aria-label="Channel header"]:not(:hover) div:is([class^="titleWrapper_"], [class*="channelName_"], [class^="topic_"]),
@@ -241,6 +242,7 @@
     animation: single_line_text_blur var(--workModeBlurSpeed);
   }
   /* Single line text info blur undo */
+  nav div[class^="channelNotice_"] div:is([class*="eventName_"], [class*="channelName_"]),
   nav div[class^="headerContent_"] h2,
   nav ul[aria-label="Channels"] li[class^="containerDefault_"] *:is(div:is([class^="name_"], [class^="usernameContainer_"]), h3[class^="name_"]),
   div[class^="chat_"] section[aria-label="Channel header"] div:is([class^="titleWrapper_"], [class*="channelName_"], [class^="topic_"]),
