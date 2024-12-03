@@ -2,7 +2,7 @@
  * @name Work Mode (Blur Everything)
  * @author Andrew Larson
  * @description All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
- * @version 2.0.4
+ * @version 2.0.5
  * @authorLink https://andrew-larson.dev/
  * @donate https://buymeacoffee.com/Andrew.J.Larson
  * @website https://github.com/Andrew-J-Larson/Custom-CSS/tree/main/!-User-Styles/Discord/BetterDiscord/Work-Mode-Blur-Everything
@@ -473,14 +473,14 @@ div[class^="layerContainer_"] > div[id^="popout_"] > div[aria-modal="true"] > di
 div[class^="layer_"] div[class^="inviteRow_"]:not(:hover) div[class^="inviteRowInfo_"] img[class^="avatar_"],
 div[class^="peopleListItem_"]:not(:hover) div:is([class^="avatars_"], [class^="avatar_"], [class^="userInfo_"]) > div[class^="wrapper_"] > svg:not([class^="avatarDecoration_"]) img,
 div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div[class*="listAvatar_"] img[class^="avatar_"],
-div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div[class*="listAvatar_"][style^="background-image:"],
+div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"]:not(:hover) > div[class*="listAvatar_"][style*="background-image:"],
 div:is([class^="interactive_"], [class^="member_"]):not(:hover) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
 div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
 div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[class^="contents_"]:not(:hover) > img[class^="avatar_"],
 div[class^="nowPlayingColumn_"] div[class^="itemCard_"]:not(:hover) header img[class^="avatar_"],
 div[class^="members_"] div[class^="container_"]:not(:hover) > div[class^="infoSection_"] > div[class^="userSection_"] > div[class^="facePile_"] svg:not([class^="avatarDecoration_"]) img,
 div[class^="members_"] div[class^="container_"]:not(:hover) > img[class^="contentImage_"],
-div[class^="headerLine_"] > div[class*="guildIcon_"][style^="background-image:"]:not(:hover),
+div[class^="headerLine_"] > div[class*="guildIcon_"][style*="background-image:"]:not(:hover),
 div[class^="closedFolderIconWrapper_"]:not(:hover) > div[class^="icon_"],
 div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div:not(:hover) > svg > foreignObject > div > img,
 div:not(:hover) > svg img[class^="guildIcon_"] {
@@ -493,14 +493,14 @@ div[class^="peopleListItem_"] div:is([class^="avatars_"], [class^="avatar_"], [c
 div[class^="layerContainer_"] > div[id^="popout_"] > div[aria-modal="true"] > div[class^="popout_"] div[class^="friendWrapper_"] > div[class*="friend_"] > div[class*="avatar_"] svg img[class^="avatar_"],
 div[class^="layer_"] div[class^="inviteRow_"] div[class^="inviteRowInfo_"] img[class^="avatar_"],
 div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div[class*="listAvatar_"] img[class^="avatar_"],
-div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div[class*="listAvatar_"][style^="background-image:"],
+div[class^="outer_"] div[class^="inner_"][class*="fullSize_"] div[class^="body_"] div[class^="listRow_"] > div[class*="listAvatar_"][style*="background-image:"],
 div:is([class^="interactive_"], [class^="member_"]) div[class^="avatar_"] > div > svg:not([class^="avatarDecoration_"]) img,
 div[class^="content_"] div[class^="message_"] > div > div[class^="disableInteraction_"] > div[class^="contents_"] > img[class^="avatar_"],
 div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[class^="contents_"] > img[class^="avatar_"],
 div[class^="nowPlayingColumn_"] div[class^="itemCard_"] header img[class^="avatar_"],
 div[class^="members_"] div[class^="container_"] > div[class^="infoSection_"] > div[class^="userSection_"] > div[class^="facePile_"] svg:not([class^="avatarDecoration_"]) img,
 div[class^="members_"] div[class^="container_"] > img[class^="contentImage_"],
-div[class^="headerLine_"] > div[class*="guildIcon_"][style^="background-image:"],
+div[class^="headerLine_"] > div[class*="guildIcon_"][style*="background-image:"],
 div[class^="closedFolderIconWrapper_"] > div[class^="icon_"],
 div[aria-label="Servers"] div[class^="listItem_"] > div > div[class^="blobContainer"] > div > svg > foreignObject > div > img,
 div > svg img[class^="guildIcon_"] {
@@ -525,7 +525,7 @@ div[id^="sticker-picker-grid-"] div[class^="assetWrapper_"]:not(:hover) > *:is(i
 
 
 /* Large media blur */
-header > svg:not([class^="avatarDecoration_"]):not(:hover) div[class^="banner_"][style^="background-image:"],
+header > svg:not([class^="avatarDecoration_"]):not(:hover) div[class^="banner_"][style*="background-image:"],
 header div[class^="avatar_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
 div[class^="callContainer_"] div[class^="callAvatarMaskContainer_"]:not(:hover) svg img[class^="voiceAvatar_"],
 main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"] > div[class^="wrapper_"]:not(:hover) svg:not([class^="avatarDecoration_"]) img,
@@ -539,7 +539,7 @@ div[class^="content_"]:not(:hover) div[class^="message_"] > div > div[class^="di
   animation: large_blur var(--workModeBlurSpeed);
 }
 /* Large media blur undo */
-header > svg:not([class^="avatarDecoration_"]) div[class^="banner_"][style^="background-image:"],
+header > svg:not([class^="avatarDecoration_"]) div[class^="banner_"][style*="background-image:"],
 header div[class^="avatar_"] svg:not([class^="avatarDecoration_"]) img,
 div[class^="callContainer_"] div[class^="callAvatarMaskContainer_"] svg img[class^="voiceAvatar_"],
 main[class^="chatContent_"] div[id^="chat-messages-"][class^="container_"] > div[class^="wrapper_"] svg:not([class^="avatarDecoration_"]) img,
