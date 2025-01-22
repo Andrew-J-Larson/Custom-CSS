@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://andrew-larson.dev/
-@version        2.0.5
+@version        2.0.6
 @description    All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
@@ -171,7 +171,7 @@
     div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
     div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
     div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
-    div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
+    div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div:is([class^="embedVideo"] > *:first-child, [class^="embed"]),
     div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class*="pollContainer_"] *:is(div[class^="header_"] > h4, div[class^="answerInner_"] > *:is(img.emoji, div), div[class^="detailsText_"] div[class^="fontScaling_"], div[class^="bottomBar_"] > button[class^="buttonPresentation_"] > div),
     div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] *:is(div[class^="attachment_"] > *, span:is([class*="attachmentName_"], [class*="formattedSize_"])),
     div[class^="chat_"] main:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) > div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > * > *,
@@ -211,8 +211,8 @@
   *:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
   main[class^="chatContent_"] div:is([class^="message_"]:not(:hover), [class^="messageGroupCozy_"]) div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
   *:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
-  main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
-  *:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
+  main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div:is([class^="embedVideo"] > *:first-child, [class^="embed"]),
+  *:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div:is([class^="embedVideo"] > *:first-child, [class^="embed"]),
   main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class*="pollContainer_"] *:is(div[class^="header_"] > h4, div[class^="answerInner_"] > *:is(img.emoji, div), div[class^="detailsText_"] div[class^="fontScaling_"], div[class^="bottomBar_"] > button[class^="buttonPresentation_"] > div),
   *:not(main[class^="chatContent_"]) *:not(:hover) > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class*="pollContainer_"] *:is(div[class^="header_"] > h4, div[class^="answerInner_"] > *:is(img.emoji, div), div[class^="detailsText_"] div[class^="fontScaling_"], div[class^="bottomBar_"] > button[class^="buttonPresentation_"] > div),
   main[class^="chatContent_"]:not(:hover) div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] *:is(div[class^="attachment_"] > *, span:is([class*="attachmentName_"], [class*="formattedSize_"])),
@@ -283,7 +283,7 @@
     div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] *:is(div[class^="eventStatusLabel_"], img[class^="avatar_"], div[class^="rsvpCount_"] > *, h3[data-text-variant="heading-lg/medium"], div[class^="descriptionText_"], div[class^="inviteDetailsContainer_"] > *),
     div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
     div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
-    div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
+    div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div:is([class^="embedVideo"] > *:first-child, [class^="embed"]),
     div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class*="pollContainer_"] *:is(div[class^="header_"] > h4, div[class^="answerInner_"] > *:is(img.emoji, div), div[class^="detailsText_"] div[class^="fontScaling_"], div[class^="bottomBar_"] > button[class^="buttonPresentation_"] > div),
     div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] *:is(div[class^="attachment_"] > *, span:is([class*="attachmentName_"], [class*="formattedSize_"])),
     div[class^="chat_"] main div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="reactions_"] > div:not([aria-label="Add Reaction"]) > * > *,
@@ -323,8 +323,8 @@
   *:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="headerLine_"] > div[class*="guildInfo_"] > *,
   main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
   *:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] iframe[class^="embedSpotify_"],
-  main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
-  *:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div[class^="embed"],
+  main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div:is([class^="embedVideo"] > *:first-child, [class^="embed"]),
+  *:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] article[class^="embedWrapper_"] div[class^="grid"] > div:is([class^="embedVideo"] > *:first-child, [class^="embed"]),
   main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class*="pollContainer_"] *:is(div[class^="header_"] > h4, div[class^="answerInner_"] > *:is(img.emoji, div), div[class^="detailsText_"] div[class^="fontScaling_"], div[class^="bottomBar_"] > button[class^="buttonPresentation_"] > div),
   *:not(main[class^="chatContent_"]) * > div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class*="pollContainer_"] *:is(div[class^="header_"] > h4, div[class^="answerInner_"] > *:is(img.emoji, div), div[class^="detailsText_"] div[class^="fontScaling_"], div[class^="bottomBar_"] > button[class^="buttonPresentation_"] > div),
   main[class^="chatContent_"] div:is([class^="message_"], [class^="messageGroupCozy_"]) div[id^="message-accessories-"] div[class^="nonVisualMediaItem_"] *:is(div[class^="attachment_"] > *, span:is([class*="attachmentName_"], [class*="formattedSize_"])),
