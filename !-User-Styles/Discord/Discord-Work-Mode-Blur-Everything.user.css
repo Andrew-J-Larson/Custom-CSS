@@ -1,13 +1,15 @@
 /* ==UserStyle==
 @name           Discord - Work Mode (Blur Everything)
 @namespace      https://drewj.la/
-@version        2.0.7
+@version        2.0.8
 @description    All user created content (text, image, video) is blurred, unless hovered over. Some content is blurred in chunks (chat), while others are entire panels (channel list).
 @author         Andrew Larson
 @license        GPL-3.0-or-later
-@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/!-User-Styles/Discord/Discord-Work-Mode-Blur-Everything.user.css
+@updateURL      https://raw.githubusercontent.com/Andrew-J-Larson/Custom-CSS/main/Ω%20-%20DEPRECATED/!-User-Styles/Discord/Discord-Work-Mode-Blur-Everything.user.css
 ==/UserStyle== */
-
+ 
+ /* DEPRECATED, no longer updating since Discord changed their UI, again, smh */
+ 
 /* Copyright (C) 2024  Andrew Larson (github@drewj.la)
 
  * This program is free software: you can redistribute it and/or modify
